@@ -2,29 +2,33 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Firebase Web Quickstart</title>
+		<title>Spinach Demo</title>
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+		<script defer src="js/config.js"></script>
+		<script defer src="js/session.js"></script>
+		<script defer src="js/script.js"></script>
 	</head>
 	<body>
 
-		<h1 id="bigOne"></h1>
+		<div id="login">
+			<h1>Anonymous Login</h1>
+			<ul>
+				<li>
+					<a id="btnLogin" href="#">Login Anonymously</a>
+				</li>
+				<li>
+					<a id="btnLogout" href="#" class="hide">Logout</a>
+				</li>
+			</ul>
+		</div>
 
-		<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-		<script>
-  			// Initialize Firebase
-			var config = {
-		    apiKey: "AIzaSyCFybRATt68YJuSbgAyb88gs3_em2xGIHs",
-		    authDomain: "spinach-f9987.firebaseapp.com",
-		    databaseURL: "https://spinach-f9987.firebaseio.com",
-		    storageBucket: "spinach-f9987.appspot.com",
-		    messagingSenderId: "313774547003"
-		};
-  		firebase.initializeApp(config);
 
-		var bigOne = document.getElementById('bigOne');
-		var dbRef = firebase.database().ref().child('text');
-		dbRef.on('value', snap => bigOne.innerText = snap.val());
 
-		</script>
 
 	</body>
 </html>
